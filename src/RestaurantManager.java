@@ -28,7 +28,7 @@ public class RestaurantManager {
 			return;
 		}
 		if (restaurant.name[num1].equals(rname)) {
-			restaurant = null;
+			restaurant.name[num1] = null;
 			System.out.println("the restaurant is deleted");
 		}
 	}
