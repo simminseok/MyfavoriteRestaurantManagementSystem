@@ -1,49 +1,55 @@
 import java.util.Scanner;
 
 public class RestaurantManager {
-	Restaurant restaurant;
+	Restaurant restaurant = new Restaurant();
 	Scanner input;
 	RestaurantManager(Scanner input){
 		this.input = input;
 	}
 	public void addrestaurant() {
-		restaurant = new Restaurant();
 		System.out.print("Favoliteranking: ");
-		restaurant.favoliteranking = input.nextInt();
+		int num1 = input.nextInt();
+		restaurant.favoliteranking[num1] = num1;
 		System.out.print("Restaurant Name: ");
-		restaurant.name = input.next();
+		restaurant.name[num1] = input.next();
 		System.out.print("Restaurant address: ");
-		restaurant.address = input.next();
+		restaurant.address[num1] = input.next();
 		System.out.print("Restaurant phone: ");
-		restaurant.phone = input.next();   
+		restaurant.phone[num1] = input.next();   
 	}
 
 	public void deleterestaurant() {
-		System.out.print("Favoliteranking: ");
-		int ranking = input.nextInt();
+		System.out.println("Restaurant FavoliteLanking: ");
+		int num1 = input.nextInt();
+		System.out.print("Restaurant Name: ");
+		String rname = input.next();
 		if (restaurant == null) {
 			System.out.println("the restaurant has not been registered");
 			return;
 		}
-		if (restaurant.favoliteranking == ranking) {
+		if (restaurant.name[num1].equals(rname)) {
 			restaurant = null;
 			System.out.println("the restaurant is deleted");
 		}
 	}
 
 	public void editrestaurant() {
-		System.out.print("Favoliteranking: ");
-		int ranking = input.nextInt();
-		if (restaurant.favoliteranking == ranking) {
-			System.out.println("the restaurant to be edited is " + ranking);
+		System.out.println("Restaurant FavoliteLanking: ");
+		int num1 = input.nextInt();
+		System.out.print("Restaurant Name: ");
+		String rname = input.next();
+		if (restaurant.name[num1].equals(rname)) {
+			System.out.println("the restaurant to be edited is " + rname);
 		}
 	}
 
 	public void viewrestaurant() {
-		System.out.print("Favoliteranking: ");
-		int ranking = input.nextInt();
-		if (restaurant.favoliteranking == ranking) {
-			restaurant.printInfo();
+		System.out.println("Restaurant FavoliteLanking: ");
+		int num1 = input.nextInt();
+		System.out.print("Restaurant Name: ");
+		String rname = input.next();
+		if (restaurant.name[num1].equals(rname)) {
+			restaurant.printInfo(num1);
 		}
 	}
 }

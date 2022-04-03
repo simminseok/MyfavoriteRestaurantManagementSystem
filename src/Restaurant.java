@@ -1,26 +1,22 @@
 public class Restaurant {
-    int favoliteranking;
-	String name;
-	String address;
-	String phone;
+    int[] favoliteranking = new int[50];
+	String[] name = new String[50];
+	String[] address = new String[50];
+	String[] phone = new String[50];
 
 	public Restaurant() {   
 	}
 
-	public Restaurant(String name) {
-		this.name = name;
-	}
-
-	public Restaurant(int favoliteranking, String name, String address, String phone) {
+	public Restaurant(int favoliteranking, String name, String address, String phone, int num) {
 		super();
-		this.favoliteranking = favoliteranking;
-		this.name = name;
-		this.address = address;
-		this.phone = phone;
+		this.favoliteranking[num] = favoliteranking;
+		this.name[num] = name;
+		this.address[num] = address;
+		this.phone[num] = phone;
 	}
 
-	public void printInfo() {
-		System.out.println("favoliteranking: " + favoliteranking + " name: " + name + " address:" + address + " phone:" + phone);      
+	public void printInfo(int num) {
+		System.out.println("favoliteranking: " + favoliteranking[num] + " name: " + name[num] + " address:" + address[num] + " phone:" + phone[num]);      
 	}
 
 }
