@@ -30,6 +30,9 @@ public class MyfavoriteRestaurantManagementSystem {
 			else if (num == 4) {
 				restaurantmanager.viewrestaurant();
 			}
+			else {
+				continue;
+			}
 		}
 	}
 }
