@@ -2,7 +2,14 @@ package restaurant;
 
 import java.util.Scanner;
 
-public class ChinesefoodRestaurant extends Restaurant {
+public class Chinesefood extends Restaurant {
+	
+	public Chinesefood(RestaurantKind kind) {
+		super(kind);
+	}
+	
+	protected String ownerphone; 
+	
 	public void getUserInput(Scanner input) {
 		System.out.print("Favoliteranking: ");
 		int favoliteranking = input.nextInt();
@@ -11,28 +18,64 @@ public class ChinesefoodRestaurant extends Restaurant {
 		System.out.print("Restaurant Name: ");
 		String name = input.next();
 		this.setName(name);
+		
+		System.out.print("Restaurant Address: ");
+		String address = input.next();  
+		this.setAddress(address);
 
 		char answer = 'x';
 		while (answer != 'y' && answer != 'Y' && answer != 'n' & answer != 'N') {
-			System.out.print("Do you have an email address? (Y/N)");
+			System.out.print("Do you have a Restaurant phone number? (Y/N)");
 			answer = input.next().charAt(0);
 			if(answer == 'y' || answer == 'Y') {
-				System.out.print("Restaurant address: ");
-				String address = input.next();
-				this.setAddress(address);
+				System.out.print("Phone number: ");
+				String phone = input.next();
+				this.setPhone(phone);
 				break;
 			}
 			else if(answer == 'n' || answer == 'N') {
-				this.setAddress("");
+				this.setPhone("");
 				break;
 			}
 			else {
 			}
 		}
-
-		System.out.print("Restaurant phone: ");
-		String phone = input.next();  
-		this.setPhone(phone);
+		
+		answer = 'x';
+		while (answer != 'y' && answer != 'Y' && answer != 'n' & answer != 'N') {
+			System.out.print("Do you have a owner's phone number? (Y/N)");
+			answer = input.next().charAt(0);
+			if(answer == 'y' || answer == 'Y') {
+				System.out.print("owner's phone number: ");
+				ownerphone = input.next();
+				break;
+			}
+			else if(answer == 'n' || answer == 'N') {
+				ownerphone = " ";
+				break;
+			}
+			else {
+			}
+		}
 	}
-
+	
+	public void printInfo() {
+		String skind = "none";
+		switch(this.kind) {
+		case Koreanfood:
+			skind = "Koreanfood";
+		    break;
+		case Japanesefood:
+			skind = "Japanesefood";
+			break;
+		case Chinesefood:
+			skind = "Chinesefood";
+			break;
+		case Westernfood:
+			skind = "Westernfood";
+			break;
+		default:
+		}
+		System.out.println("kind: " + skind + " favoliteranking: " + favoliteranking + " name: " + name + " address:" + address + " phone:" + phone + " owner's phone:" + ownerphone);      
+	}
 }
