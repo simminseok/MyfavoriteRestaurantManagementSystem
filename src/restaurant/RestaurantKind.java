@@ -1,8 +1,8 @@
 package restaurant;
 
 public enum RestaurantKind {
-	KoreanfoodRestaurant,
-	JapanesefoodRestaurant,
-	ChinesefoodRestaurant,
-	WesternfoodRestaurant
+	Koreanfood,
+	Japanesefood,
+	Chinesefood,
+	Westernfood
 }

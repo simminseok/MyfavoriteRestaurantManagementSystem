@@ -3,7 +3,7 @@ package restaurant;
 import java.util.Scanner;
 
 public class Restaurant {
-	protected RestaurantKind kind = RestaurantKind.KoreanfoodRestaurant;
+	protected RestaurantKind kind = RestaurantKind.Koreanfood;
 	protected int favoliteranking;
 	protected String name;
 	protected String address;
@@ -11,8 +11,20 @@ public class Restaurant {
 
 	public Restaurant() {    
 	}
+	
+	public Restaurant(RestaurantKind kind) {
+		this.kind = kind;
+	}
 
 	public Restaurant(int favoliteranking, String name, String address, String phone) {
+		this.favoliteranking = favoliteranking;
+		this.name = name;
+		this.address = address;
+		this.phone = phone;
+	}
+	
+	public Restaurant(RestaurantKind kind, int favoliteranking, String name, String address, String phone) {
+		this.kind = kind;
 		this.favoliteranking = favoliteranking;
 		this.name = name;
 		this.address = address;
@@ -49,9 +61,25 @@ public class Restaurant {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
+	
 	public void printInfo() {
-		System.out.println("favoliteranking: " + favoliteranking + " name: " + name + " address:" + address + " phone:" + phone);      
+		String skind = "none";
+		switch(this.kind) {
+		case Koreanfood:
+			skind = "Koreanfood";
+		    break;
+		case Japanesefood:
+			skind = "Japanesefood";
+			break;
+		case Chinesefood:
+			skind = "Chinesefood";
+			break;
+		case Westernfood:
+			skind = "Westernfood";
+			break;
+		default:
+		}
+		System.out.println("kind: " + skind + " favoliteranking: " + favoliteranking + " name: " + name + " address:" + address + " phone:" + phone);      
 	}
 	
 	public void getUserInput(Scanner input) {
@@ -71,5 +99,4 @@ public class Restaurant {
 		String phone = input.next();  
 		this.setPhone(phone);
 	}
-
 }

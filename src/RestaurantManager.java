@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import restaurant.ChinesefoodRestaurant;
-import restaurant.JapanesefoodRestaurant;
-import restaurant.KoreanfoodRestaurant;
+import restaurant.Chinesefood;
+import restaurant.Japanesefood;
+import restaurant.Koreanfood;
 import restaurant.Restaurant;
-import restaurant.WesternfoodRestaurant;
+import restaurant.RestaurantKind;
+import restaurant.Westernfood;
 
 public class RestaurantManager {
 	ArrayList<Restaurant> restaurants = new ArrayList<Restaurant>();
@@ -25,25 +26,25 @@ public class RestaurantManager {
 			System.out.println("Select num for Restaurant Kind (between 1 to 4) : ");
 			kind = input.nextInt();
 			if(kind == 1) {
-				restaurant = new Restaurant();
+				restaurant = new Restaurant(RestaurantKind.Koreanfood);
 				restaurant.getUserInput(input);
 				restaurants.add(restaurant);
 				break;
 			}
 			else if(kind == 2) {
-				restaurant = new JapanesefoodRestaurant();
+				restaurant = new Japanesefood(RestaurantKind.Japanesefood);
 				restaurant.getUserInput(input);
 				restaurants.add(restaurant);
 				break;
 			}
 			else if(kind == 3) {
-				restaurant = new ChinesefoodRestaurant();
+				restaurant = new Chinesefood(RestaurantKind.Chinesefood);
 				restaurant.getUserInput(input);
 				restaurants.add(restaurant);
 				break;
 			}
 			else if(kind == 4) {
-				restaurant = new WesternfoodRestaurant();
+				restaurant = new Westernfood(RestaurantKind.Westernfood);
 				restaurant.getUserInput(input);
 				restaurants.add(restaurant);
 				break;
