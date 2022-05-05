@@ -2,7 +2,7 @@ package restaurant;
 
 import java.util.Scanner;
 
-public class Japanesefood extends Restaurant {
+public class Japanesefood extends Restaurant implements RestaurantInput {
 
 	public Japanesefood(RestaurantKind kind) {
 		super(kind);

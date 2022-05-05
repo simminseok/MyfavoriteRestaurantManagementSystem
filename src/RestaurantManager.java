@@ -5,11 +5,12 @@ import restaurant.Chinesefood;
 import restaurant.Japanesefood;
 import restaurant.Koreanfood;
 import restaurant.Restaurant;
+import restaurant.RestaurantInput;
 import restaurant.RestaurantKind;
 import restaurant.Westernfood;
 
 public class RestaurantManager {
-	ArrayList<Restaurant> restaurants = new ArrayList<Restaurant>();
+	ArrayList<RestaurantInput> restaurants = new ArrayList<RestaurantInput>();
 	Scanner input;
 
 	RestaurantManager(Scanner input){
@@ -17,7 +18,7 @@ public class RestaurantManager {
 	}
 	public void addrestaurant() {
 		int kind = 0;
-		Restaurant restaurant;
+		RestaurantInput restaurantInput;
 		while(kind != 1 && kind != 2 && kind != 3 && kind != 4) {
 			System.out.println("1 for Koreanfood ");
 			System.out.println("2 for Japanesefood ");
@@ -26,27 +27,27 @@ public class RestaurantManager {
 			System.out.println("Select num for Restaurant Kind (between 1 to 4) : ");
 			kind = input.nextInt();
 			if(kind == 1) {
-				restaurant = new Restaurant(RestaurantKind.Koreanfood);
-				restaurant.getUserInput(input);
-				restaurants.add(restaurant);
+				restaurantInput = new Koreanfood(RestaurantKind.Koreanfood);
+				restaurantInput.getUserInput(input);
+				restaurants.add(restaurantInput);
 				break;
 			}
 			else if(kind == 2) {
-				restaurant = new Japanesefood(RestaurantKind.Japanesefood);
-				restaurant.getUserInput(input);
-				restaurants.add(restaurant);
+				restaurantInput = new Japanesefood(RestaurantKind.Japanesefood);
+				restaurantInput.getUserInput(input);
+				restaurants.add(restaurantInput);
 				break;
 			}
 			else if(kind == 3) {
-				restaurant = new Chinesefood(RestaurantKind.Chinesefood);
-				restaurant.getUserInput(input);
-				restaurants.add(restaurant);
-				break;
+				restaurantInput = new Chinesefood(RestaurantKind.Chinesefood);
+				restaurantInput.getUserInput(input);
+				restaurants.add(restaurantInput);
+				break; 
 			}
 			else if(kind == 4) {
-				restaurant = new Westernfood(RestaurantKind.Westernfood);
-				restaurant.getUserInput(input);
-				restaurants.add(restaurant);
+				restaurantInput = new Westernfood(RestaurantKind.Westernfood);
+				restaurantInput.getUserInput(input);
+				restaurants.add(restaurantInput);
 				break;
 			}
 			else {
@@ -74,12 +75,11 @@ public class RestaurantManager {
 	}
 
 	public void editrestaurant() {
-
 		System.out.print("Restaurant name:");
 		String restaurantname = input.next();
 		for(int i = 0; i<restaurants.size(); i++) {
-			Restaurant restaurant = restaurants.get(i);
-			if((restaurant.getName()).equals(restaurantname)) {
+			RestaurantInput restaurantInput = restaurants.get(i);
+			if((restaurantInput.getName()).equals(restaurantname)) {
 				int num = -1;
 				while(num != 5) {
 					System.out.println("** Restaurant Info Edit Menu **");
@@ -93,22 +93,22 @@ public class RestaurantManager {
 					if(num == 1) {
 						System.out.println("Restaurant favoliteranking : ");
 						int favoliteranking = input.nextInt();
-						restaurant.setFavoliteranking(favoliteranking);
+						restaurantInput.setFavoliteranking(favoliteranking);
 					}
 					else if(num == 2) {
 						System.out.println("Restaurant name : ");
 						String name = input.next();
-						restaurant.setName(name);
+						restaurantInput.setName(name);
 					}
 					else if(num == 3) {
 						System.out.println("Restaurant address : ");
 						String address = input.next();
-						restaurant.setAddress(address);
+						restaurantInput.setAddress(address);
 					}
 					else if(num == 4) {
 						System.out.println("Restaurant phone : ");
 						String phone = input.next();
-						restaurant.setPhone(phone);
+						restaurantInput.setPhone(phone);
 					}
 					else{
 						continue;
