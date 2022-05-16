@@ -2,7 +2,9 @@ package restaurant;
 
 import java.util.Scanner;
 
-public class Westernfood extends Restaurant implements RestaurantInput {
+import exception.PhoneFormatException;
+
+public class Westernfood extends FusionRestaurant {
 
 	public Westernfood(RestaurantKind kind) {
 		super(kind);
@@ -11,37 +13,15 @@ public class Westernfood extends Restaurant implements RestaurantInput {
 	protected String ownerphone; 
 
 	public void getUserInput(Scanner input) {
-		System.out.print("Favoliteranking: ");
-		int favoliteranking = input.nextInt();
-		this.setFavoliteranking(favoliteranking);
+		setRestaurantfavoliteranking(input);
+		setRestaurantName(input);
+		setRestaurantAddress(input);
+		setRestaurantPhonewithYN(input);
+		setOwnerPhonewithYN(input);
+	}
 
-		System.out.print("Restaurant Name: ");
-		String name = input.next();
-		this.setName(name);
-
-		System.out.print("Restaurant Address: ");
-		String address = input.next();  
-		this.setAddress(address);
-
+	public void setOwnerPhonewithYN(Scanner input) {
 		char answer = 'x';
-		while (answer != 'y' && answer != 'Y' && answer != 'n' & answer != 'N') {
-			System.out.print("Do you have a Restaurant phone number? (Y/N)");
-			answer = input.next().charAt(0);
-			if(answer == 'y' || answer == 'Y') {
-				System.out.print("Phone number: ");
-				String phone = input.next();
-				this.setPhone(phone);
-				break;
-			}
-			else if(answer == 'n' || answer == 'N') {
-				this.setPhone("");
-				break;
-			}
-			else {
-			}
-		}
-
-		answer = 'x';
 		while (answer != 'y' && answer != 'Y' && answer != 'n' & answer != 'N') {
 			System.out.print("Do you have a owner's phone number? (Y/N)");
 			answer = input.next().charAt(0);
@@ -60,22 +40,7 @@ public class Westernfood extends Restaurant implements RestaurantInput {
 	}
 
 	public void printInfo() {
-		String skind = "none";
-		switch(this.kind) {
-		case Koreanfood:
-			skind = "Koreanfood";
-			break;
-		case Japanesefood:
-			skind = "Japanesefood";
-			break;
-		case Chinesefood:
-			skind = "Chinesefood";
-			break;
-		case Westernfood:
-			skind = "Westernfood";
-			break;
-		default:
-		}
+		String skind = getKindString();
 		System.out.println("kind: " + skind + " favoliteranking: " + favoliteranking + " name: " + name + " address:" + address + " phone:" + phone + " owner's phone:" + ownerphone);      
 	}
 }

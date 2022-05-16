@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import restaurant.Chinesefood;
@@ -20,37 +21,47 @@ public class RestaurantManager {
 		int kind = 0;
 		RestaurantInput restaurantInput;
 		while(kind != 1 && kind != 2 && kind != 3 && kind != 4) {
-			System.out.println("1 for Koreanfood ");
-			System.out.println("2 for Japanesefood ");
-			System.out.println("3 for Chinesefood ");
-			System.out.println("4 for Westernfood ");
-			System.out.println("Select num for Restaurant Kind (between 1 to 4) : ");
-			kind = input.nextInt();
-			if(kind == 1) {
-				restaurantInput = new Koreanfood(RestaurantKind.Koreanfood);
-				restaurantInput.getUserInput(input);
-				restaurants.add(restaurantInput);
-				break;
+			try {
+				System.out.println("1 for Koreanfood ");
+				System.out.println("2 for Japanesefood ");
+				System.out.println("3 for Chinesefood ");
+				System.out.println("4 for Westernfood ");
+				System.out.print("Select num for Restaurant Kind (between 1 to 4) : ");
+				kind = input.nextInt();
+				if(kind == 1) {
+					restaurantInput = new Koreanfood(RestaurantKind.Koreanfood);
+					restaurantInput.getUserInput(input);
+					restaurants.add(restaurantInput);
+					break;
+				}
+				else if(kind == 2) {
+					restaurantInput = new Japanesefood(RestaurantKind.Japanesefood);
+					restaurantInput.getUserInput(input);
+					restaurants.add(restaurantInput);
+					break;
+				}
+				else if(kind == 3) {
+					restaurantInput = new Chinesefood(RestaurantKind.Chinesefood);
+					restaurantInput.getUserInput(input);
+					restaurants.add(restaurantInput);
+					break; 
+				}
+				else if(kind == 4) {
+					restaurantInput = new Westernfood(RestaurantKind.Westernfood);
+					restaurantInput.getUserInput(input);
+					restaurants.add(restaurantInput);
+					break;
+				}
+				else {
+					System.out.print("Select num for Restaurant Kind between 1~4: ");
+				}
 			}
-			else if(kind == 2) {
-				restaurantInput = new Japanesefood(RestaurantKind.Japanesefood);
-				restaurantInput.getUserInput(input);
-				restaurants.add(restaurantInput);
-				break;
-			}
-			else if(kind == 3) {
-				restaurantInput = new Chinesefood(RestaurantKind.Chinesefood);
-				restaurantInput.getUserInput(input);
-				restaurants.add(restaurantInput);
-				break; 
-			}
-			else if(kind == 4) {
-				restaurantInput = new Westernfood(RestaurantKind.Westernfood);
-				restaurantInput.getUserInput(input);
-				restaurants.add(restaurantInput);
-				break;
-			}
-			else {
+			catch(InputMismatchException e) {
+				System.out.print("Please put an integer between 1 and 4!");
+				if (input.hasNext()) {
+					input.next();
+				}
+			    kind = -1;
 			}
 		}   
 	}
@@ -58,6 +69,11 @@ public class RestaurantManager {
 	public void deleterestaurant() {
 		System.out.print("Restaurant Name: ");
 		String name = input.next();
+		int index = findIndex(name);
+		removefromRestaurants(index, name);
+	}
+
+	public int findIndex(String name) {
 		int index = -1;
 		for(int i = 0 ; i<restaurants.size(); i++) {
 			if((restaurants.get(i).getName()).equals(name)) {
@@ -65,12 +81,18 @@ public class RestaurantManager {
 				break;
 			}
 		}
+		return index;
+	}
+
+	public int removefromRestaurants(int index, String name) {
 		if(index >= 0) {
 			restaurants.remove(index);
 			System.out.println("the Restaurant " + name + " is deleted");
+			return 1;
 		}
 		else {
 			System.out.println("the Restaurant has not been registered");
+			return -1;
 		}
 	}
 
@@ -78,49 +100,49 @@ public class RestaurantManager {
 		System.out.print("Restaurant name:");
 		String restaurantname = input.next();
 		for(int i = 0; i<restaurants.size(); i++) {
-			RestaurantInput restaurantInput = restaurants.get(i);
-			if((restaurantInput.getName()).equals(restaurantname)) {
+			RestaurantInput restaurant = restaurants.get(i);
+			if((restaurant.getName()).equals(restaurantname)) {
 				int num = -1;
 				while(num != 5) {
-					System.out.println("** Restaurant Info Edit Menu **");
-					System.out.println("1. Edit favoliteranking");
-					System.out.println("2. Edit name");
-					System.out.println("3. Edit address");
-					System.out.println("4. Edit phonenumber");
-					System.out.println("5. Exit");
-					System.out.println("Select one number between 1 - 5:");
+					showEditMenu();
 					num = input.nextInt();
-					if(num == 1) {
-						System.out.println("Restaurant favoliteranking : ");
-						int favoliteranking = input.nextInt();
-						restaurantInput.setFavoliteranking(favoliteranking);
-					}
-					else if(num == 2) {
-						System.out.println("Restaurant name : ");
-						String name = input.next();
-						restaurantInput.setName(name);
-					}
-					else if(num == 3) {
-						System.out.println("Restaurant address : ");
-						String address = input.next();
-						restaurantInput.setAddress(address);
-					}
-					else if(num == 4) {
-						System.out.println("Restaurant phone : ");
-						String phone = input.next();
-						restaurantInput.setPhone(phone);
-					}
-					else{
+					switch(num) {
+					case 1:
+						restaurant.setRestaurantfavoliteranking(input);
+						break;
+					case 2:
+						restaurant.setRestaurantName(input);
+						break;
+					case 3:
+						restaurant.setRestaurantAddress(input);
+						break;
+					case 4:
+						restaurant.setRestaurantPhone(input);
+						break;
+					default:
 						continue;
 					}
 				}
+				break;
 			}
 		}
 	}
 
 	public void viewrestaurant() {
+		System.out.println("number of registered restaurants: " + restaurants.size());
 		for(int i = 0; i < restaurants.size(); i ++) {
 			restaurants.get(i).printInfo();
 		}
+	}
+
+
+	public void showEditMenu() {
+		System.out.println("** Restaurant Info Edit Menu **");
+		System.out.println("1. Edit favoliteranking");
+		System.out.println("2. Edit name");
+		System.out.println("3. Edit address");
+		System.out.println("4. Edit phonenumber");
+		System.out.println("5. Exit");
+		System.out.print("Select one number between 1 - 5:");	
 	}
 }
