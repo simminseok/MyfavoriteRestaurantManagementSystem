@@ -18,7 +18,7 @@ public class MyfavoriteRestaurantManagementSystem {
 			restaurantmanager = new RestaurantManager(input);
 		}
 		selectMenu(input, restaurantmanager);
-	    putObject(restaurantmanager, "restaurantmanager.ser");
+	        putObject(restaurantmanager, "restaurantmanager.ser");
 	}
 
 	public static void selectMenu(Scanner input, RestaurantManager restaurantmanager) {
