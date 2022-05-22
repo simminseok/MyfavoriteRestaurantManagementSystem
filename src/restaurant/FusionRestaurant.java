@@ -39,5 +39,4 @@ public abstract class FusionRestaurant extends Restaurant {
 			}
 		}
 	}
-
 }

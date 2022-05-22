@@ -1,10 +1,16 @@
 package restaurant;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exception.PhoneFormatException;
 
-public abstract class Restaurant implements RestaurantInput{
+public abstract class Restaurant implements RestaurantInput, Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2566694571874785380L;
+	
 	protected RestaurantKind kind = RestaurantKind.Koreanfood;
 	protected int favoliteranking;
 	protected String name;

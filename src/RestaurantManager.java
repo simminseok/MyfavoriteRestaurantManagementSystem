@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -5,14 +6,18 @@ import java.util.Scanner;
 import restaurant.Chinesefood;
 import restaurant.Japanesefood;
 import restaurant.Koreanfood;
-import restaurant.Restaurant;
 import restaurant.RestaurantInput;
 import restaurant.RestaurantKind;
 import restaurant.Westernfood;
 
-public class RestaurantManager {
+public class RestaurantManager implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1377272367519358879L;
+	
 	ArrayList<RestaurantInput> restaurants = new ArrayList<RestaurantInput>();
-	Scanner input;
+	transient Scanner input;
 
 	RestaurantManager(Scanner input){
 		this.input = input;
@@ -53,11 +58,11 @@ public class RestaurantManager {
 					break;
 				}
 				else {
-					System.out.print("Select num for Restaurant Kind between 1~4: ");
+					System.out.println("Select num for Restaurant Kind between 1~4: ");
 				}
 			}
 			catch(InputMismatchException e) {
-				System.out.print("Please put an integer between 1 and 4!");
+				System.out.println("Please put an integer between 1 and 4!");
 				if (input.hasNext()) {
 					input.next();
 				}
@@ -134,7 +139,6 @@ public class RestaurantManager {
 			restaurants.get(i).printInfo();
 		}
 	}
-
 
 	public void showEditMenu() {
 		System.out.println("** Restaurant Info Edit Menu **");
