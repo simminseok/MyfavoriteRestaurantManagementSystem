@@ -1,7 +1,6 @@
 package GUI;
 
 import java.awt.BorderLayout;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -34,5 +33,4 @@ public class MenuSelection extends JFrame{
 		this.add(panel2, BorderLayout.CENTER);
 		this.setVisible(true);
 	}
-
 }
