@@ -6,5 +6,4 @@ public class LoggerTester {
 		EventLogger logger = new EventLogger("log.txt");
 		logger.log("test");
 	}
-
 }

@@ -2,7 +2,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
 import restaurant.Chinesefood;
 import restaurant.Japanesefood;
 import restaurant.Koreanfood;
@@ -11,11 +10,8 @@ import restaurant.RestaurantKind;
 import restaurant.Westernfood;
 
 public class RestaurantManager implements Serializable {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -1377272367519358879L;
-	
+
 	ArrayList<RestaurantInput> restaurants = new ArrayList<RestaurantInput>();
 	transient Scanner input;
 
@@ -66,7 +62,7 @@ public class RestaurantManager implements Serializable {
 				if (input.hasNext()) {
 					input.next();
 				}
-			    kind = -1;
+				kind = -1;
 			}
 		}   
 	}
