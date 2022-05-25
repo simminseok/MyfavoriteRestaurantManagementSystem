@@ -44,6 +44,7 @@ public class RestaurantAdder extends JFrame{
 	
 	    this.setSize(300, 300);
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
 	    this.setContentPane(panel);
 	    this.setVisible(true);
 	}
