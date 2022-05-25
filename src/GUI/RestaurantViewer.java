@@ -20,7 +20,6 @@ public class RestaurantViewer extends JFrame{
 		
 		this.add(sp);
 		this.setSize(300, 300);
-	   
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setVisible(true);
 	}
