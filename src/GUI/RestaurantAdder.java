@@ -12,37 +12,37 @@ public class RestaurantAdder extends JPanel {
 	WindowFrame frame;
 	
 	public RestaurantAdder(WindowFrame frame) {
-		this.frame = frame;
+	    this.frame = frame;
 		
-		JPanel panel = new JPanel();
-		panel.setLayout(new SpringLayout());
+	    JPanel panel = new JPanel();
+	    panel.setLayout(new SpringLayout());
 
 	    JLabel labelFavoliteranking = new JLabel("Favoliteranking: ", JLabel.TRAILING);
 	    JTextField fieldFavoliteranking = new JTextField(10);
-        labelFavoliteranking.setLabelFor(fieldFavoliteranking);
-        panel.add(labelFavoliteranking);
-        panel.add(fieldFavoliteranking);
+            labelFavoliteranking.setLabelFor(fieldFavoliteranking);
+            panel.add(labelFavoliteranking);
+            panel.add(fieldFavoliteranking);
         
-        JLabel labelName = new JLabel("Name: ", JLabel.TRAILING);
+            JLabel labelName = new JLabel("Name: ", JLabel.TRAILING);
 	    JTextField fieldName = new JTextField(10);
-        labelName.setLabelFor(fieldName);
-        panel.add(labelName);
-        panel.add(fieldName);
+            labelName.setLabelFor(fieldName);
+            panel.add(labelName);
+            panel.add(fieldName);
         
-        JLabel labelAddress = new JLabel("Address: ", JLabel.TRAILING);
+            JLabel labelAddress = new JLabel("Address: ", JLabel.TRAILING);
 	    JTextField fieldAddress = new JTextField(10);
-        labelAddress.setLabelFor(fieldAddress);
-        panel.add(labelAddress);
-        panel.add(fieldAddress);
+            labelAddress.setLabelFor(fieldAddress);
+            panel.add(labelAddress);
+            panel.add(fieldAddress);
         
-        JLabel labelPhone = new JLabel("Phone: ", JLabel.TRAILING);
+            JLabel labelPhone = new JLabel("Phone: ", JLabel.TRAILING);
 	    JTextField fieldPhone = new JTextField(10);
-        labelPhone.setLabelFor(fieldPhone);
-        panel.add(labelPhone);
-        panel.add(fieldPhone);
-        panel.add(new JButton("save"));
-        panel.add(new JButton("cancel"));
-        SpringUtilities.makeCompactGrid(panel, 5, 2, 6, 6, 6, 6); 
+            labelPhone.setLabelFor(fieldPhone);
+            panel.add(labelPhone);
+            panel.add(fieldPhone);
+            panel.add(new JButton("save"));
+            panel.add(new JButton("cancel"));
+            SpringUtilities.makeCompactGrid(panel, 5, 2, 6, 6, 6, 6); 
 	    this.add(panel);
 	    this.setVisible(true);
 	}
