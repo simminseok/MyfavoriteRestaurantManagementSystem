@@ -12,12 +12,12 @@ public class ButtonAddListener implements ActionListener {
 	WindowFrame frame;
 	
 	public ButtonAddListener(WindowFrame frame) {
-		this.frame = frame;
+	    this.frame = frame;
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		JButton b = (JButton) e.getSource();
-		RestaurantAdder adder = frame.getRestaurantadder();
+	    JButton b = (JButton) e.getSource();
+	    RestaurantAdder adder = frame.getRestaurantadder();
 	    frame.setupPanel(adder);
 	}
 }
