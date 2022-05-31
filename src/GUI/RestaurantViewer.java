@@ -29,8 +29,8 @@ public class RestaurantViewer extends JPanel {
 		model.addColumn("Contact Info.");
 		
 		for (int i =0 ; i< restaurantmanager.size() ; i++) {
-			Vector row = new Vector();
-			RestaurantInput si = restaurantmanager.get(i);
+		    Vector row = new Vector();
+		    RestaurantInput si = restaurantmanager.get(i);
 		    row.add(si.getFavoliteranking());
 		    row.add(si.getName());
 		    row.add(si.getAddress());
