@@ -11,12 +11,12 @@ public class ButtonViewListener implements ActionListener {
 	WindowFrame frame;
 	
 	public ButtonViewListener(WindowFrame frame) {
-		this.frame = frame;
+	    this.frame = frame;
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		JButton b = (JButton) e.getSource();
-		RestaurantViewer viewer = frame.getRestaurantviewer();
+	    JButton b = (JButton) e.getSource();
+	    RestaurantViewer viewer = frame.getRestaurantviewer();
 	    frame.setupPanel(viewer);
 	}
 }
