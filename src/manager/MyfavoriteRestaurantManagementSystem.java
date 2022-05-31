@@ -81,7 +81,6 @@ public class MyfavoriteRestaurantManagementSystem {
 		try {
 			FileInputStream file = new FileInputStream(filename);
 			ObjectInputStream in = new ObjectInputStream(file);
-
 			restaurantmanager = (RestaurantManager) in.readObject();
 
 			in.close();
