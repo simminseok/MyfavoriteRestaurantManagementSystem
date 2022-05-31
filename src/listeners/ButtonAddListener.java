@@ -9,7 +9,6 @@ import GUI.RestaurantViewer;
 import GUI.WindowFrame;
 
 public class ButtonAddListener implements ActionListener {
-
 	WindowFrame frame;
 	
 	public ButtonAddListener(WindowFrame frame) {

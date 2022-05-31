@@ -20,7 +20,6 @@ public class RestaurantViewer extends JPanel {
 	public RestaurantViewer(WindowFrame frame, RestaurantManager restaurantmanager) {
 		this.frame = frame;
 		this.restaurantmanager = restaurantmanager;
-		
 		System.out.println("***" + restaurantmanager.size() + "***");
 		
 		DefaultTableModel model = new DefaultTableModel();
@@ -44,5 +43,4 @@ public class RestaurantViewer extends JPanel {
 		
 		this.add(sp);
 	}
-
 }

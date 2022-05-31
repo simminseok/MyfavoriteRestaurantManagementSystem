@@ -16,15 +16,11 @@ public class WindowFrame extends JFrame {
 		this.setSize(500, 300);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("My Frame");
-		
 		this.restaurantmanager = restaurantmanager;
 		menuselection = new MenuSelection(this);
 		restaurantadder = new RestaurantAdder(this);
 		restaurantviewer = new RestaurantViewer(this, this.restaurantmanager);
-		
-	
 		this.add(menuselection);
-		
 		this.setVisible(true);
 	}
 	

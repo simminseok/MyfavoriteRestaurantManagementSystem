@@ -8,7 +8,6 @@ import GUI.RestaurantViewer;
 import GUI.WindowFrame;
 
 public class ButtonViewListener implements ActionListener {
-
 	WindowFrame frame;
 	
 	public ButtonViewListener(WindowFrame frame) {
@@ -20,5 +19,4 @@ public class ButtonViewListener implements ActionListener {
 		RestaurantViewer viewer = frame.getRestaurantviewer();
 	    frame.setupPanel(viewer);
 	}
-
 }
