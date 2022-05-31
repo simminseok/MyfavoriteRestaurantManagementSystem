@@ -1,3 +1,4 @@
+package manager;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -6,6 +7,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import GUI.WindowFrame;
 import log.EventLogger;
 
 public class MyfavoriteRestaurantManagementSystem {
@@ -17,6 +20,11 @@ public class MyfavoriteRestaurantManagementSystem {
 		if (restaurantmanager == null) {
 			restaurantmanager = new RestaurantManager(input);
 		}
+		else {
+			restaurantmanager.setScanner(input);
+		}
+		
+		WindowFrame frame = new WindowFrame(restaurantmanager);
 		selectMenu(input, restaurantmanager);
 		putObject(restaurantmanager, "restaurantmanager.ser");
 	}

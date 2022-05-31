@@ -1,3 +1,4 @@
+package manager;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -5,6 +6,7 @@ import java.util.Scanner;
 import restaurant.Chinesefood;
 import restaurant.Japanesefood;
 import restaurant.Koreanfood;
+import restaurant.Restaurant;
 import restaurant.RestaurantInput;
 import restaurant.RestaurantKind;
 import restaurant.Westernfood;
@@ -14,10 +16,15 @@ public class RestaurantManager implements Serializable {
 
 	ArrayList<RestaurantInput> restaurants = new ArrayList<RestaurantInput>();
 	transient Scanner input;
-
+	
 	RestaurantManager(Scanner input){
 		this.input = input;
 	}
+	
+	public void setScanner(Scanner input) {
+		this.input = input;
+	}
+	
 	public void addrestaurant() {
 		int kind = 0;
 		RestaurantInput restaurantInput;
@@ -134,6 +141,14 @@ public class RestaurantManager implements Serializable {
 		for(int i = 0; i < restaurants.size(); i ++) {
 			restaurants.get(i).printInfo();
 		}
+	}
+	
+	public int size() {
+		return restaurants.size();
+	}
+	
+	public RestaurantInput get(int index) {
+		return (Restaurant) restaurants.get(index);
 	}
 
 	public void showEditMenu() {
