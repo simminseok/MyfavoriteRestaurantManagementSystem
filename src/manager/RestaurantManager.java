@@ -160,4 +160,5 @@ public class RestaurantManager implements Serializable {
 		System.out.println("5. Exit");
 		System.out.print("Select one number between 1 - 5:");	
 	}
+	
 }
