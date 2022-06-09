@@ -9,7 +9,7 @@ public class Koreanfood extends FusionRestaurant {
 	}
 	
 	public void getUserInput(Scanner input) {
-		setRestaurantfavoliteranking(input);
+		setRestaurantfavoriteranking(input);
 		setRestaurantName(input);
 		setRestaurantAddress(input);
 		setRestaurantPhone(input);
