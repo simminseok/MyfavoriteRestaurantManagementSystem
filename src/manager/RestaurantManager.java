@@ -25,6 +25,16 @@ public class RestaurantManager implements Serializable {
 		this.input = input;
 	}
 	
+	public void addrestaurant(int favoriteranking , String name, String address, String phone) {
+		RestaurantInput restaurantInput = new Koreanfood(RestaurantKind.Koreanfood);
+		restaurantInput.getUserInput(input);
+		restaurants.add(restaurantInput);
+	}
+	
+	public void addrestaurant(RestaurantInput restaurantInput) {
+		restaurants.add(restaurantInput);
+	}
+	
 	public void addrestaurant() {
 		int kind = 0;
 		RestaurantInput restaurantInput;
@@ -116,7 +126,7 @@ public class RestaurantManager implements Serializable {
 					num = input.nextInt();
 					switch(num) {
 					case 1:
-						restaurant.setRestaurantfavoliteranking(input);
+						restaurant.setRestaurantfavoriteranking(input);
 						break;
 					case 2:
 						restaurant.setRestaurantName(input);
@@ -153,7 +163,7 @@ public class RestaurantManager implements Serializable {
 
 	public void showEditMenu() {
 		System.out.println("** Restaurant Info Edit Menu **");
-		System.out.println("1. Edit favoliteranking");
+		System.out.println("1. Edit favoriteranking");
 		System.out.println("2. Edit name");
 		System.out.println("3. Edit address");
 		System.out.println("4. Edit phonenumber");
