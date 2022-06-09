@@ -5,7 +5,7 @@ import java.util.Scanner;
 import exception.PhoneFormatException;
 
 public class Westernfood extends FusionRestaurant {
-
+	
 	public Westernfood(RestaurantKind kind) {
 		super(kind);
 	}
@@ -13,7 +13,7 @@ public class Westernfood extends FusionRestaurant {
 	protected String ownerphone; 
 
 	public void getUserInput(Scanner input) {
-		setRestaurantfavoliteranking(input);
+		setRestaurantfavoriteranking(input);
 		setRestaurantName(input);
 		setRestaurantAddress(input);
 		setRestaurantPhonewithYN(input);
@@ -41,6 +41,6 @@ public class Westernfood extends FusionRestaurant {
 
 	public void printInfo() {
 		String skind = getKindString();
-		System.out.println("kind: " + skind + " favoliteranking: " + favoliteranking + " name: " + name + " address:" + address + " phone:" + phone + " owner's phone:" + ownerphone);      
+		System.out.println("kind: " + skind + " favoriteranking: " + favoriteranking + " name: " + name + " address:" + address + " phone:" + phone + " owner's phone:" + ownerphone);      
 	}
 }
