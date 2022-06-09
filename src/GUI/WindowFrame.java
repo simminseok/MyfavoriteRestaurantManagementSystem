@@ -18,7 +18,7 @@ public class WindowFrame extends JFrame {
 		this.setTitle("My Frame");
 		this.restaurantmanager = restaurantmanager;
 		menuselection = new MenuSelection(this);
-		restaurantadder = new RestaurantAdder(this);
+		restaurantadder = new RestaurantAdder(this, this.restaurantmanager);
 		restaurantviewer = new RestaurantViewer(this, this.restaurantmanager);
 		this.add(menuselection);
 		this.setVisible(true);
