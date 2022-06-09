@@ -9,7 +9,7 @@ public abstract class Restaurant implements RestaurantInput, Serializable {
 	private static final long serialVersionUID = -2566694571874785380L;
 	
 	protected RestaurantKind kind = RestaurantKind.Koreanfood;
-	protected int favoliteranking;
+	protected int favoriteranking;
 	protected String name;
 	protected String address;
 	protected String phone;
@@ -21,16 +21,16 @@ public abstract class Restaurant implements RestaurantInput, Serializable {
 		this.kind = kind;
 	}
 
-	public Restaurant(int favoliteranking, String name, String address, String phone) {
-		this.favoliteranking = favoliteranking;
+	public Restaurant(int favoriteranking, String name, String address, String phone) {
+		this.favoriteranking = favoriteranking;
 		this.name = name;
 		this.address = address;
 		this.phone = phone;
 	}
 
-	public Restaurant(RestaurantKind kind, int favoliteranking, String name, String address, String phone) {
+	public Restaurant(RestaurantKind kind, int favoriteranking, String name, String address, String phone) {
 		this.kind = kind;
-		this.favoliteranking = favoliteranking;
+		this.favoriteranking = favoriteranking;
 		this.name = name;
 		this.address = address;
 		this.phone = phone;
@@ -44,12 +44,12 @@ public abstract class Restaurant implements RestaurantInput, Serializable {
 		this.kind = kind;
 	}
 
-	public int getFavoliteranking() {
-		return favoliteranking;
+	public int getFavoriteranking() {
+		return favoriteranking;
 	}
 
-	public void setFavoliteranking(int favoliteranking) {
-		this.favoliteranking = favoliteranking;
+	public void setFavoriteranking(int favoriteranking) {
+		this.favoriteranking = favoriteranking;
 	}
 
 	public String getName() {
@@ -81,10 +81,10 @@ public abstract class Restaurant implements RestaurantInput, Serializable {
 
 	public abstract void printInfo();
 
-	public void setRestaurantfavoliteranking(Scanner input) {
-		System.out.print("Restaurant favoliteranking : ");
-		int favoliteranking = input.nextInt();
-		this.setFavoliteranking(favoliteranking);
+	public void setRestaurantfavoriteranking(Scanner input) {
+		System.out.print("Restaurant favoriteranking : ");
+		int favoriteranking = input.nextInt();
+		this.setFavoriteranking(favoriteranking);
 	}
 
 	public void setRestaurantName(Scanner input) {
