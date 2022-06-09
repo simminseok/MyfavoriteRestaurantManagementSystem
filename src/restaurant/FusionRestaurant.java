@@ -14,7 +14,7 @@ public abstract class FusionRestaurant extends Restaurant {
 
 	public void printInfo() {
 		String skind = getKindString();
-		System.out.println("kind: " + skind + " favoliteranking: " + favoliteranking + " name: " + name + " address:" + address + " phone:" + phone);      
+		System.out.println("kind: " + skind + " favoriteranking: " + favoriteranking + " name: " + name + " address:" + address + " phone:" + phone);      
 	}
 	
 	public void setRestaurantPhonewithYN(Scanner input) {
