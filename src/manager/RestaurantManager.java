@@ -12,6 +12,7 @@ import restaurant.RestaurantKind;
 import restaurant.Westernfood;
 
 public class RestaurantManager implements Serializable {
+	
 	private static final long serialVersionUID = -1377272367519358879L;
 
 	ArrayList<RestaurantInput> restaurants = new ArrayList<RestaurantInput>();

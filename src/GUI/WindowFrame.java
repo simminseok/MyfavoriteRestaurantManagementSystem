@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import manager.RestaurantManager;
 
 public class WindowFrame extends JFrame {
+	
 	RestaurantManager restaurantmanager;
 	MenuSelection menuselection;
 	RestaurantAdder restaurantadder;

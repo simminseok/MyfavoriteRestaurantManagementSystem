@@ -13,6 +13,7 @@ import GUI.WindowFrame;
 import manager.RestaurantManager;
 
 public class ButtonViewerListener implements ActionListener {
+	
 	WindowFrame frame;
 	
 	public ButtonViewerListener(WindowFrame frame) {

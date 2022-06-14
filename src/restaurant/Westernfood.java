@@ -5,7 +5,6 @@ import java.util.Scanner;
 import exception.PhoneFormatException;
 
 public class Westernfood extends FusionRestaurant {
-	
 	public Westernfood(RestaurantKind kind) {
 		super(kind);
 	}

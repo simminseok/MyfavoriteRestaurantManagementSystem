@@ -12,7 +12,6 @@ import listeners.RestaurantAdderListener;
 import manager.RestaurantManager;
 
 public class RestaurantAdder extends JPanel {
-
 	WindowFrame frame;
 	RestaurantManager restaurantmanager;
 

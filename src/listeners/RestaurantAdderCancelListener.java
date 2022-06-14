@@ -9,6 +9,7 @@ import GUI.RestaurantViewer;
 import GUI.WindowFrame;
 
 public class RestaurantAdderCancelListener implements ActionListener {
+	
 	WindowFrame frame;
 	
 	public RestaurantAdderCancelListener(WindowFrame frame) {

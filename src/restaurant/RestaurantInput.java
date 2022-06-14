@@ -5,6 +5,7 @@ import java.util.Scanner;
 import exception.PhoneFormatException;
 
 public interface RestaurantInput {
+	
 	public int getFavoriteranking();
 	
 	public void setFavoriteranking(int favoriteranking);

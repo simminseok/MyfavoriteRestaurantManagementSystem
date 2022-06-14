@@ -12,7 +12,6 @@ import manager.RestaurantManager;
 import restaurant.RestaurantInput;
 
 public class RestaurantViewer extends JPanel {
-
 	WindowFrame frame;
 
 	RestaurantManager restaurantmanager;

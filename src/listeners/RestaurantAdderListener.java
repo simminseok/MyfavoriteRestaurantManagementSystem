@@ -17,6 +17,7 @@ import restaurant.RestaurantInput;
 import restaurant.RestaurantKind;
 
 public class RestaurantAdderListener implements ActionListener {
+	
 	JTextField fieldFavoriteranking;
 	JTextField fieldName;
 	JTextField fieldAddress;

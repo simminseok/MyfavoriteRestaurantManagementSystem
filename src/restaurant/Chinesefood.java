@@ -3,7 +3,6 @@ package restaurant;
 import java.util.Scanner;
 
 public class Chinesefood extends FusionRestaurant {
-	
 	public Chinesefood(RestaurantKind kind) {
 		super(kind);
 	}
